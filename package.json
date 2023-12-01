@@ -1,0 +1,11 @@
+{
+    "scripts": {
+        "start": "tsx run.ts"
+    },
+    "dependencies": {
+        "tsx": "^4.6.1"
+    },
+    "devDependencies": {
+        "@types/node": "^20.10.1"
+    }
+}
