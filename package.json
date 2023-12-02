@@ -1,6 +1,7 @@
 {
     "scripts": {
-        "start": "tsx run.ts"
+        "start": "tsx scripts/run.ts",
+        "make": "tsx scripts/make.ts"
     },
     "dependencies": {
         "tsx": "^4.6.1"
