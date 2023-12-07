@@ -1,4 +1,4 @@
-import {getInput} from "../../utils/input";
+import { getInput } from "../../utils/input";
 
 type Item =
     | "seed"
@@ -49,7 +49,7 @@ function map(value: number, from: Item, to: Item): number {
         }
 
         if (value >= source && value < source + range) {
-            return value - ;
+            return destination + value - source;
         }
     }
 
@@ -103,11 +103,15 @@ for (let i = 0; i < seeds.length; i++) {
 
         val = map(val, item, nextItem);
         console.log(item, "->", nextItem, "=", val);
+        if (nextItem == "location") locations.push(val);
     }
 }
 
 console.log(locations);
-console.log("should be 81:", map(79, "seed", "soil"));
-console.log("should be 14:", map(14, "seed", "soil"));
-console.log("should be 47:", map(55, "seed", "soil"));
-console.log("should be 13:", map(13, "seed", "soil"));
+
+let lowest = Number.MAX_VALUE;
+for (let i = 0; i < locations.length; i++) {
+    if (locations[i] < lowest) lowest = locations[i];
+}
+
+console.log("lowest:", lowest, "seeds:", seeds.length);
