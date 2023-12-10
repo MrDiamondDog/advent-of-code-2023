@@ -22,12 +22,11 @@ function extrapolate(sequence: Sequence): number {
 
     for (let i = sequence.subsequences.length - 2; i >= 0; i--) {
         const subsequence = sequence.subsequences[i];
-        const right = subsequence[0];
-        currentVal = right - currentVal;
+        const left = subsequence[subsequence.length - 1];
+        currentVal += left;
     }
 
-    currentVal = sequence.original[0] - currentVal;
-    console.log(currentVal);
+    currentVal += sequence.original[sequence.original.length - 1];
 
     return currentVal;
 }
