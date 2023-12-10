@@ -1,4 +1,4 @@
-import {getInput} from "../../utils/input";
+import { getInput } from "../../utils/input";
 
 type Hand = {
     str: string;
@@ -34,7 +34,7 @@ const hands: Hand[] = input.map((line) => {
 });
 
 function rankHand(hand: Hand): Rank {
-    const charCounts: {[key: string]: number} = {};
+    const charCounts: { [key: string]: number; } = {};
 
     for (let i = 0; i < hand.str.length; i++) {
         const char = hand.str[i];
@@ -43,6 +43,8 @@ function rankHand(hand: Hand): Rank {
         else charCounts[char]++;
     }
 
+    // this took hours to find
+    if (charCounts["J"] == 5) return "five of a kind";
     if (charCounts["J"]) {
         let highest = "";
         for (const key in charCounts) {
