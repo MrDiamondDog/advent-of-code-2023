@@ -11,14 +11,6 @@ function pos(x: number, y: number) {
     return grid[y][x];
 }
 
-function countLower(arr: number[], num: number): number {
-    let count = 0;
-    for (const number of arr) {
-        if (number < num) count++;
-    }
-    return count;
-}
-
 let emptyRows: number[] = [];
 let emptyCols: number[] = [];
 
