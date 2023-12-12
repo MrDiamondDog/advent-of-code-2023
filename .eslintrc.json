@@ -2,13 +2,7 @@
     "root": true,
     "parser": "@typescript-eslint/parser",
     "ignorePatterns": ["dist", "browser"],
-    "plugins": [
-        "@typescript-eslint",
-        "simple-header",
-        "simple-import-sort",
-        "unused-imports",
-        "path-alias"
-    ],
+    "plugins": ["@typescript-eslint", "unused-imports", "path-alias"],
     "rules": {
         "quotes": ["error", "double", {"avoidEscape": true}],
         "jsx-quotes": ["error", "prefer-double"],
